@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Resume Analysis</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/result.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🚀 AI Resume Analysis</h1>
+
+    <p class="score">
+        📊 Overall Resume Score: {{ ats_score }}/100
+    </p>
+
+    <div class="stats">
+
+        <div class="card">
+            <h3>{{ detected_skills|length }}</h3>
+            <p>Skills Found</p>
+        </div>
+
+        <div class="card">
+            <h3>{{ missing_skills|length }}</h3>
+            <p>Missing Skills</p>
+        </div>
+
+        <div class="card">
+            <h3>{{ career_role }}</h3>
+            <p>Career Role</p>
+        </div>
+
+    </div>
+
+    <h2>📈 ATS Analysis</h2>
+
+    <ul>
+        {% for item in ats_checks %}
+        <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>✅ Detected Skills</h2>
+
+    <ul>
+        {% for skill in detected_skills %}
+        <li>✅ {{ skill }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>❌ Missing Skills</h2>
+
+    <ul>
+        {% for skill in missing_skills %}
+        <li>❌ {{ skill }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>💡 Suggestions</h2>
+
+    <ul>
+        {% for item in suggestions %}
+        <li>💡 {{ item }}</li>
+        {% endfor %}
+    </ul>
+
+    <hr>
+
+    <h2>📄 Resume Content</h2>
+
+    <pre>{{ resume_text }}</pre>
+
+</div>
+
+</body>
+</html>

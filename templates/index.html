@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Resume Analyzer</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🤖 AI Resume Analyzer</h1>
+
+        <p>
+            Upload your resume and receive AI-powered insights,
+            skill detection, ATS compatibility score and professional
+            improvement suggestions.
+        </p>
+
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+
+            <input type="file" name="resume" accept=".pdf">
+
+            <br><br>
+
+            <button class="upload-btn" type="submit">
+                Upload Resume
+            </button>
+
+        </form>
+
+        <div class="features">
+
+            <h3>✨ Features</h3>
+
+            <ul>
+                <li>📄 Resume Upload</li>
+                <li>🧠 AI Skill Detection</li>
+                <li>📊 Resume Score</li>
+                <li>🎯 ATS Compatibility Analysis</li>
+                <li>💡 Smart Suggestions</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
